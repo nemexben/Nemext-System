@@ -70,30 +70,6 @@ client.on('message', message => {
 
 /////////////////////////////////////////////////////////////////////////////
 
-client.on('message', message => {
-  var name1 = message.mentions.users.first();
-  var reason = message.content.split(' ').slice(2).join(' ');
-  if(message.content.startsWith(prefix + 'report')) {
-      if(message.author.bot) return;
-      if(!message.guild.channels.find('name', '⚠reports')) return message.channel.send('**Please make ROM as (rum name) to send the reports to it ⚠️**').then(msg => msg.delete(5000));
-  if(!name1) return message.reply('**The name of the person to whom you are referring ⚠️**').then(msg => msg.delete(3000))
-      message.delete();
-  if(!reason) return message.reply('**Type the reason 🚫**').then(msg => msg.delete(3000))
-      message.delete();
-  var abod = new Discord.RichEmbed()
-  .setTitle(`:page_with_curl: **[REPORT]** By: ${message.author.tag}`)
-  .addField('**Report For:**', `${name1}`, true)
-  .addField('**In Channel:**', `${message.channel.name}`, true)
-  .addField('**Reason:**', `${reason}`, true)
-  .setFooter(`${message.author.username}#${message.author.discriminator}`, message.author.avatarURL)
-  .setTimestamp()
-      message.guild.channels.find('name', '⚠reports').sendEmbed(abod)
-  message.reply('**Thank you for your notification 💖**').then(msg => msg.delete(3000));
-  }
-});
-
-/////////////////////////////////////////////////////////////////////////////
-
 client.on('message', async msg =>{
   if (msg.author.bot) return undefined;
   if (!msg.content.startsWith(prefix)) return undefined;
@@ -125,13 +101,6 @@ client.on('ready', function(){
      });
     });
   });
-
-/////////////////////////////////////////////////////////////////////////////
-
-client.on("guildMemberAdd", function(member) {
-    let role = member.guild.roles.find("name", "Default");
-    member.addRole(role).catch(console.error);
-});
 
 /////////////////////////////////////////////////////////////////////////////
 
@@ -252,7 +221,6 @@ client.on('message', message => {
 ╚[❖════════════❖]╝
  ❖ $avatar ➾ to get the image
  ❖ $status ➾ status the players on the server [Online , Idle , Dnd , Invsible]
- ❖ $report ➾ report the Spaming or the Swearing or Share links ....
  ❖ $ping ➾ to see your ping or some one
  ❖ $invites ➾ to see your invites
  ❖ $date ➾ to see the time
