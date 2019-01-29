@@ -23,15 +23,6 @@ client.on('message', message => {
 
 /////////////////////////////////////////////////////////////////////////////
 
-client.on("ready", () => {
-  function rb() {
-    client.guilds.get('537310502263717903').roles.find("name", "- Developer,").setColor("RANDOM");
-  };
-  setInterval(rb, 1900);
-});
-
-/////////////////////////////////////////////////////////////////////////////
-
 client.on("message", message => { //clear
 var args = message.content.substring(prefix.length).split(" ");
 if (message.content.startsWith(prefix + "clear")) {
