@@ -7,7 +7,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`NEMEX | /help`,"https://www.twitch.tv/dark7overr")
+  client.user.setGame(`NEMEX | $help`,"https://www.twitch.tv/dark7overr")
   client.user.setStatus("dnd")
 });
 var prefix = "$"
