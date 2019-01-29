@@ -16,7 +16,7 @@ var prefix = "$"
 
 client.on('message', message => { 
     var user = message.mentions.users.first() || message.author; 
-    if (message.content.startsWith("/avatar")) { 
+    if (message.content.startsWith("$avatar")) { 
     message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
      } 
     });
@@ -211,7 +211,7 @@ client.on('guildMemberAdd', member => {
 /////////////////////////////////////////////////////////////////////////////
 
 client.on('message', message => {
-   if(message.content.startsWith("/invites")) {
+   if(message.content.startsWith("$invites")) {
     message.guild.fetchInvites().then(invs => {
       let user = message.mentions.users.first() || message.author
       let personalInvites = invs.filter(i => i.inviter.id === user.id);
@@ -250,25 +250,24 @@ client.on('message', message => {
 ╔[❖════════════❖]╗
   General Commands
 ╚[❖════════════❖]╝
- ❖ /avatar ➾ to get the image
- ❖ /support ➾ Website link support
- ❖ /status ➾ status the players on the server [Online , Idle , Dnd , Invsible]
- ❖ /report ➾ report the Spaming or the Swearing or Share links ....
- ❖ /ping ➾ to see your ping or some one
- ❖ /invites ➾ to see your invites
- ❖ /date ➾ to see the time
+ ❖ $avatar ➾ to get the image
+ ❖ $status ➾ status the players on the server [Online , Idle , Dnd , Invsible]
+ ❖ $report ➾ report the Spaming or the Swearing or Share links ....
+ ❖ $ping ➾ to see your ping or some one
+ ❖ $invites ➾ to see your invites
+ ❖ $date ➾ to see the time
 
 
 ╔[❖════════════❖]╗
   Music Commands
 ╚[❖════════════❖]╝
-❖ /play ⇏ To play a song with a clip or bass
-❖ /skip ⇏ To play the song
-❖ /pause ⇏ Pause the song
-❖ /resume ⇏ For the Molecule of Egyption after being temporarily incapacitated
-❖ /stop ⇏ To extract the pot from the room
-❖ /np ⇏ To find out the song that is running
-❖ /queue ⇏ To learn the operating system
+❖ $play ⇏ To play a song with a clip or bass
+❖ $skip ⇏ To play the song
+❖ $pause ⇏ Pause the song
+❖ $resume ⇏ For the Molecule of Egyption after being temporarily incapacitated
+❖ $stop ⇏ To extract the pot from the room
+❖ $np ⇏ To find out the song that is running
+❖ $queue ⇏ To learn the operating system
 
 `);
   message.author.send({embed});
