@@ -138,7 +138,7 @@ client.on('guildMemberAdd', Ammar=> {
     var embed = new Discord.RichEmbed()
     .setAuthor(Ammar.user.username, Ammar.user.avatarURL)
     .setThumbnail(Ammar.user.avatarURL)
-    .setImage('') //Image Link
+    .setImage('https://img.freepik.com/free-vector/welcome-lettering-yellow-origami-speech-bubble-with-triangles_1262-11380.jpg?size=338&ext=jpg') //Image Link
     .setTitle('A New member!')
     .setDescription('Welcome to the server')
     .addField('``ID of the member``:',"" +  Ammar.user.id, true)
